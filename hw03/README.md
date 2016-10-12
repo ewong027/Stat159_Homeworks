@@ -1,6 +1,6 @@
-## General Information
+## Multiple Regression Analysis
 
-Homework Name: Stat159-Fall2016-HW02, Simple Regression Analysis
+Homework Name: Stat159-Fall2016-HW03
 
 Author: Erica Wong
 
@@ -8,9 +8,15 @@ Description: In this homework assignment, we are using the different tools that 
 
 Organization:
 
-* Code: This folder contains all of my R Scripts.
+* Code: This folder contains all of my R Scripts. Within the code folder, the scripts are further divided into functions, scripts, and tests.
 * Data: This folder contains all of the different data files that I have produced in this homework assignment.
-* .gitignore: In the .gitignore file, we would put files and directories that we want to ignore in Git. In this project, we want everything so .gitignore should be empty.
+* .gitignore: In the .gitignore file, we would put files and directories that we want to ignore in Git. In this project, we want to ignore files such as .Rhistory and .DS_Store, so that will be in our .gitignore file.
 * Images: This folder contains all of my plots in both .png and .pdf form.
 * Makefile: This files contains the commands that will run my different R scripts. Additonally, through Makefile, I am going to produce everything that exists in the data folder and the report.
 * Report: This file contains my Report for this homework assignment in both .Rmd and .pdf form.
+
+Instructions on How to Reproduce:
+
+1.
+
+Licenses:
