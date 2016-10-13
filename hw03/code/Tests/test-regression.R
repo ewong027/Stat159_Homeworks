@@ -8,8 +8,7 @@ source('../functions/regression-functions.R')
 
 #Things that I Want to Test
 
-context('Test that my Regression-functions produce the 
-        same values as using the summary function')
+context('Test that my Regression-functions produce the same values as using the summary function')
 
 test_that('RSS function works', {
   expect_equal(residual_sum_squares(reg), sum(reg$residuals^2))
