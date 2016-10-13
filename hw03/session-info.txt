@@ -6,13 +6,14 @@ locale:
 [1] en_US.UTF-8/en_US.UTF-8/en_US.UTF-8/C/en_US.UTF-8/en_US.UTF-8
 
 attached base packages:
-[1] stats     graphics  grDevices utils     datasets  methods   base     
+[1] methods   stats     graphics  grDevices utils     datasets  base     
 
 other attached packages:
-[1] ggplot2_1.0.1
+[1] testthat_1.0.2 ggplot2_1.0.1 
 
 loaded via a namespace (and not attached):
- [1] labeling_0.3     MASS_7.3-45      colorspace_1.2-6 scales_0.3.0    
- [5] magrittr_1.5     plyr_1.8.3       tools_3.2.4      gtable_0.1.2    
- [9] reshape2_1.4.1   Rcpp_0.12.1      stringi_0.5-5    grid_3.2.4      
-[13] stringr_1.0.0    digest_0.6.8     proto_0.3-10     munsell_0.4.2   
+ [1] Rcpp_0.12.1      crayon_1.3.2     digest_0.6.8     MASS_7.3-45     
+ [5] grid_3.2.4       plyr_1.8.3       R6_2.1.1         gtable_0.1.2    
+ [9] magrittr_1.5     scales_0.3.0     stringi_0.5-5    reshape2_1.4.1  
+[13] proto_0.3-10     tools_3.2.4      stringr_1.0.0    munsell_0.4.2   
+[17] colorspace_1.2-6
