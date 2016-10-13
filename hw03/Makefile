@@ -1,21 +1,36 @@
-.PHONY: all data clean
+.PHONY: all data info eda regression report clean
 
-all: data/eda-output.txt data/regression.Rdata report/report.pdf
+# Establishing Variables
+Adv = data/Advertising.csv
+regdata = data/regression.RData
+cordata = data/correlation-matrix.RData
+rmd = report/report.Rmd
+rep = report/report.Rmd
+cod = code/Scripts
+
+all: eda regression report
 
 # Loading the CSV File
 data:
-	curl http://www-bcf.usc.edu/~gareth/ISL/Advertising.csv >> data/Advertising.csv
+	curl http://www-bcf.usc.edu/~gareth/ISL/Advertising.csv >> $(Adv)
 
-# Making the Elements of Data Folder
-data/regression.Rdata: code/regression-script.R data/Advertising.csv
-	RScript code/regression-script.R
+# Testing Test-That File
+tests:
+	cd code && Rscript test-that.R
 
-data/eda-output.txt: data/Advertising.csv code/eda-script.R
-	RScript code/eda-script.R
+# Running the Scripts in Code/Scripts
+info: 
+	RScript $(cod)/session-info-script.R
+
+eda: $(Adv) code/Scripts/eda-script.R
+	RScript $(cod)/eda-script.R
+
+regression: $(Adv) code/Scripts/regression-script.R
+	RScript $(cod)/regression-script.R
 
 # Generating the report
-report/report.pdf: report/report.Rmd data/regression.RData images/scatterplot-tv-sales.png
-	Rscript -e "library(rmarkdown); render('report/report.Rmd','pdf_document')"
+report: $(rmd) $(regdata) $(cordata)
+	Rscript -e "library(rmarkdown); render(‘$(rmd)’,’pdf_document')"
 
 clean:
-	rm -f report/report.pdf
+	rm -f $(rep)
