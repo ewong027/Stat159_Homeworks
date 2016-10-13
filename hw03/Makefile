@@ -4,6 +4,7 @@
 Adv = data/Advertising.csv
 regdata = data/regression.RData
 cordata = data/correlation-matrix.RData
+fun = code/Functions/regression-functions.R
 rmd = report/report.Rmd
 rep = report/report.Rmd
 cod = code/Scripts
@@ -29,7 +30,7 @@ regression: $(Adv) code/Scripts/regression-script.R
 	RScript $(cod)/regression-script.R
 
 # Generating the report
-report: $(rmd) $(regdata) $(cordata)
+report: $(rmd) $(regdata) $(cordata) $(fun)
 	Rscript -e "library(rmarkdown); render(‘$(rmd)’,’pdf_document')"
 
 clean:
