@@ -31,7 +31,7 @@ regression: $(Adv) code/Scripts/regression-script.R
 
 # Generating the report
 report: $(rmd) $(regdata) $(cordata) $(fun)
-	Rscript -e "library(rmarkdown); render(‘$(rmd)’,’pdf_document')"
+	Rscript -e "library(rmarkdown); render(‘$(rmd)’,c(‘pdf_document’,’html_document’))”
 
 clean:
 	rm -f $(rep)
