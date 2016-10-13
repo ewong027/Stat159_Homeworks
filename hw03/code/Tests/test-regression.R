@@ -35,7 +35,7 @@ test_that('R^2 function is value as R^2 from summary() ', {
 })
 
 test_that('F-stat is value as F-stat from summary() ', {
-  expect_equivalent(f_statistic(reg), regsum$fstatistic[1])
+  expect_equal(f_statistic(reg), regsum$fstatistic[[1]])
   expect_type(f_statistic(reg), 'double')
   expect_length(f_statistic(reg), 1)
 })
