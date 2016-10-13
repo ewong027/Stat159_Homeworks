@@ -1,5 +1,4 @@
 #Loading the data and Required Packages
-require(ggplot2)
 advertising <- read.csv('data/Advertising.csv', header = TRUE)
 advertising$X <- NULL
 
