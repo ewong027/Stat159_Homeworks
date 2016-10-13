@@ -19,7 +19,7 @@ total_sum_squares <- function(x){
 #R^2 = 1 - RSS/TSS
 #R^2 tells us how much of the dependent variable
 #can be explained by the independent variable
-R_squared <- function(x){
+r_squared <- function(x){
   1 - residual_sum_squares(x)/total_sum_squares(x)
 }
 
@@ -28,8 +28,8 @@ R_squared <- function(x){
 #Numerator of F-stat = ((TSS-RSS)/p)
 #Denominator of F-stat = (RSS/(n-p-1))
 #p is the number of explainatory variables and n is the number of samples
-f-statistic <- function(x){
-  numerator <- (total_sum_squares(x)-residual_sum_squares(x))/(x$rank - 1)
+f_statistic <- function(x){
+  numerator <- (total_sum_squares(x) - residual_sum_squares(x))/(x$rank-1)
   denominator <- residual_sum_squares(x)/x$df.residual
   numerator/denominator
 }
