@@ -1,0 +1,18 @@
+R version 3.2.4 (2016-03-10)
+Platform: x86_64-apple-darwin13.4.0 (64-bit)
+Running under: OS X 10.11.6 (El Capitan)
+
+locale:
+[1] en_US.UTF-8/en_US.UTF-8/en_US.UTF-8/C/en_US.UTF-8/en_US.UTF-8
+
+attached base packages:
+[1] stats     graphics  grDevices utils     datasets  methods   base     
+
+other attached packages:
+[1] ggplot2_1.0.1
+
+loaded via a namespace (and not attached):
+ [1] labeling_0.3     MASS_7.3-45      colorspace_1.2-6 scales_0.3.0    
+ [5] magrittr_1.5     plyr_1.8.3       tools_3.2.4      gtable_0.1.2    
+ [9] reshape2_1.4.1   Rcpp_0.12.1      stringi_0.5-5    grid_3.2.4      
+[13] stringr_1.0.0    digest_0.6.8     proto_0.3-10     munsell_0.4.2   
