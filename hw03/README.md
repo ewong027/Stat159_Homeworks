@@ -4,7 +4,7 @@ Homework Name: Stat159-Fall2016-HW03
 
 Author: Erica Wong
 
-Description: In this homework assignment, we are using the different tools that we have learned about to reproduce a simple regression analysis. Specifically, we are looking at Chapter 3 of _An Introduction to Statistical Learning_ by Gareth James, Daniela Witten, Trevor Hastie and Robert Tibshirani. [Here is a link to a PDF of their book.](http://www-bcf.usc.edu/%7Egareth/ISL/ISLR%20Sixth%20Printing.pdf) Specifically, we are looking at the analysis regarding the linear relationship between TV advertising and Sales.
+Description: In this homework assignment, we are using the different tools that we have learned about to reproduce a simple regression analysis. Specifically, we are looking at Chapter 3 of _An Introduction to Statistical Learning_ by Gareth James, Daniela Witten, Trevor Hastie and Robert Tibshirani. [Here is a link to a PDF of their book.](http://www-bcf.usc.edu/%7Egareth/ISL/ISLR%20Sixth%20Printing.pdf) Specifically, we are looking at the analysis regarding the linear relationship between TV, Radio, Newspaper and Sales.
 
 Organization:
 
