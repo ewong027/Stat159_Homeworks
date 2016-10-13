@@ -1,5 +1,6 @@
 #Loading Data
 advertising <- read.csv('data/Advertising.csv', header = TRUE)
+advertising$X <- NULL
 
 #PNG Images
 png('images/histogram-tv.png')
