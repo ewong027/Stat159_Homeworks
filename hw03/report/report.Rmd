@@ -8,10 +8,10 @@ output:
 ---
 
 ## Abstract
-The purpose of this report is to apply the computational tools that we have learned about in class to reproduced a simple regression analysis. Specifically, we are trying to reproduce the analysis that was done in section 3.1 of _An Introduction of Statistical Learning_ by Gareth James, Daniela Witten, Trevor Hastie and Robert Tibshirani. [You can find a link to their book and data set by clicking on this sentence.](http://www-bcf.usc.edu/~gareth/ISL/) 
+The purpose of this report is to apply the computational tools that we have learned about in class to reproduced a multiple regression analysis. Specifically, we are trying to reproduce the analysis that was done in section 3.2 of _An Introduction of Statistical Learning_ by Gareth James, Daniela Witten, Trevor Hastie and Robert Tibshirani. [You can find a link to their book and data set by clicking on this sentence.](http://www-bcf.usc.edu/~gareth/ISL/) 
 
 ## Introduction
-The goal of this study is to see how different types of advertising affects sales so that we can provide advice on what medium would be the best to improve sales of a specific product. In my report, I am specifcally looking to see if there is some association between TV advertising budget and sales. If there is an association between the two, then I want to have a model that will be able to predict sales based on the TV advertising budget.
+The goal of this study is to see how different types of advertising affects sales so that we can provide advice on what medium would be the best to improve sales of a specific product. In my report, I am specifcally looking to see if there is some association between TV, radio, newspaper, and sales. If there is an association between the response and explainatory variables, then I want to have a model that will be able to predict sales based on these 3 variables..
 
 ## Data
 In this report, we are using data from [Advertising.csv](http://www-bcf.usc.edu/~gareth/ISL/Advertising.csv). In the data set we have four different columns. There is the TV advertising budget, radio advertising budget, and newspaper advertising budget. These budgets are given in thousands of dollars. Additionally, there is a sales column, which is given in thousands of units. In my report, we will be focusing on the TV and sales column of the Advertising.csv.
@@ -21,15 +21,69 @@ We look at the data set and study the relationship between TV advertising budget
 
 ## Results
 Using the least squares criterion, we obtain the following estimates.
+
+Here are the tables of the simple linear regression of sales vs each of the variables:
+This is for Simple regression of sales on TV.
 ```{r results= 'asis', echo = FALSE}
 load('../data/regression.RData')
 library(xtable)
-tbl <- xtable(regression_summary,
-              caption = 'Information about Regression Coefficents',
-              digits = 2)
-row.names(tbl) <- c('(Intercept)','TV')
+tbl_TV <- xtable(regression_summary_TV,
+              caption = 'Simple Regression of Sales on TV',
+              digits = 4)
+row.names(tbl_TV) <- c('(Intercept)','TV')
 
-print(tbl, caption.placement = 'top',
+print(tbl_TV, caption.placement = 'top',
+      comment = getOption("xtable.comment", FALSE))
+```
+
+This is for Simple regression of sales on radio.
+```{r results= 'asis', echo = FALSE}
+load('../data/regression.RData')
+library(xtable)
+tbl_Radio <- xtable(regression_summary_Radio,
+              caption = 'Simple Regression of Sales on Radio',
+              digits = 4)
+row.names(tbl_Radio) <- c('(Intercept)','radio')
+
+print(tbl_Radio, caption.placement = 'top',
+      comment = getOption("xtable.comment", FALSE))
+```
+
+This is for Simple regression of sales on newspaper.
+```{r results= 'asis', echo = FALSE}
+load('../data/regression.RData')
+library(xtable)
+tbl_newspaper <- xtable(regression_summary_Newspaper,
+              caption = 'Simple Regression of Sales on Newspaper',
+              digits = 4)
+row.names(tbl_newspaper) <- c('(Intercept)','newspaper')
+
+print(tbl_newspaper, caption.placement = 'top',
+      comment = getOption("xtable.comment", FALSE))
+```
+
+Multiple Regression Table
+```{r results= 'asis', echo = FALSE}
+load('../data/regression.RData')
+library(xtable)
+tbl_multiple <- xtable(regression_summary_multiple,
+              caption = 'Multiple Regression Table',
+              digits = 4)
+row.names(tbl_multiple) <- c('(Intercept)','TV','Radio','newspaper')
+
+print(tbl_multiple, caption.placement = 'top',
+      comment = getOption("xtable.comment", FALSE))
+```
+
+Correlation Matrix
+```{r results= 'asis', echo = FALSE}
+load('../data/correlation-matrix.RData')
+library(xtable)
+cor_matrix <- xtable(upper.tri(correlation_matrix, diag = TRUE),
+              caption = 'Correlation Matrix',
+              digits = 4)
+
+print(cor_matrix, caption.placement = 'top',
       comment = getOption("xtable.comment", FALSE))
 ```
 
