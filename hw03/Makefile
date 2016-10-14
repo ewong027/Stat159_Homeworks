@@ -19,13 +19,13 @@ tests:
 	cd code && Rscript test-that.R
 
 # Targets that Run the Scripts in Code/Scripts
-info: $(cod)/session-info-script.R
+info: 
 	RScript $(cod)/session-info-script.R
 
-eda: $(Adv) code/Scripts/eda-script.R
+eda: 
 	RScript $(cod)/eda-script.R
 
-regression: $(Adv) $(cod)/regression-script.R
+regression: 
 	RScript $(cod)/regression-script.R
 
 # Target for the report
