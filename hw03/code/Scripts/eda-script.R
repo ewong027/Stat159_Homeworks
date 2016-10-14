@@ -36,6 +36,8 @@ dev.off()
 
 #correlation matrix
 correlation_matrix <- cor(advertising)
+correlation_matrix <- round(correlation_matrix, digits = 4)
+correlation_matrix[lower.tri(correlation_matrix)] <- ''
 
 #Making the Summary Tables
 sink('data/eda-output.txt')
