@@ -21,7 +21,7 @@ We look at the data set and study the relationship between TV, radio, newspaper,
 
 ## Results
 Here are the tables of the simple linear regression of sales vs each of the three variables:
-This is for Simple regression of sales on TV.
+Table 1 shows simple regression of sales on TV.
 ```{r results= 'asis', echo = FALSE}
 load('../data/regression.RData')
 library(xtable)
@@ -34,7 +34,7 @@ print(tbl_TV, caption.placement = 'top',
       comment = getOption("xtable.comment", FALSE))
 ```
 
-This is for Simple regression of sales on radio.
+Table 2 shows simple regression of sales on radio.
 ```{r results= 'asis', echo = FALSE}
 tbl_Radio <- xtable(regression_summary_Radio,
               caption = 'Simple Regression of Sales on Radio',
@@ -45,7 +45,7 @@ print(tbl_Radio, caption.placement = 'top',
       comment = getOption("xtable.comment", FALSE))
 ```
 
-This is for Simple regression of sales on newspaper.
+Table 3 shows simple regression of sales on newspaper.
 ```{r results= 'asis', echo = FALSE}
 tbl_newspaper <- xtable(regression_summary_Newspaper,
               caption = 'Simple Regression of Sales on Newspaper',
@@ -68,8 +68,7 @@ print(tbl_multiple, caption.placement = 'top',
       comment = getOption("xtable.comment", FALSE))
 ```
 
-Additionally, we have included the correlation matrix between the different variables.
-Correlation Matrix:
+Additionally, we have included the correlation matrix between the different variables. The correlation matrix is shown in table 5.
 ```{r results= 'asis', echo = FALSE}
 load('../data/correlation-matrix.RData')
 cor_matrix <- xtable(correlation_matrix,
@@ -89,7 +88,7 @@ In this report, we want to answer 4 main questions. Those questions are:
 To answer these questions, we will be using the informations from the tables produced above (in addition to other tables) and draw conclusions from those.
 
 ###1. Is at least one of the predictors useful in predicting the response?
-When asking this question, we are setting up the null hypothesis to be: $H_{0}$: $\beta_1 = \beta_2 = \cdots = \beta_p$. The alternative hypothesis in this case is $H_{1}$: There exists at least one $\beta_j$ that does not equal 0. In order to see if there is a relationship we can look at the F-statistic. If there is no relationship between the predictors and the response variable, in our case TV, radio, and newspaper with sales, then the F-statistic will be close to 1. However, if the F-statistic is greater than 1, then there is probably a relationship between the predictors and the response and we will reject the null hypothesis. Here is a chart containing additional information, and one of the things that is shown in this table is the F-statistic.
+When asking this question, we are setting up the null hypothesis to be: $H_{0}$: $\beta_1 = \beta_2 = \cdots = \beta_p$. The alternative hypothesis in this case is $H_{1}$: There exists at least one $\beta_j$ that does not equal 0. In order to see if there is a relationship we can look at the F-statistic. If there is no relationship between the predictors and the response variable, in our case TV, radio, and newspaper with sales, then the F-statistic will be close to 1. However, if the F-statistic is greater than 1, then there is probably a relationship between the predictors and the response and we will reject the null hypothesis. In table 6, there is a chart containing additional information, and one of the things that is shown in this table is the F-statistic.
 
 ```{r results= 'asis', echo = FALSE}
 Quantity <- c('RSE', 'R2', 'F-stat')
@@ -120,7 +119,7 @@ We can also look at $R^{2}$, which tells us how much of the dependent variable c
 So, looking at these 2 criteria, we can see that our multiple regression model with all 3 variables fits very well overall.
 
 ###4. How accurate is the prediction?
-As explained in the previous question, we know that our prediction is fairly accurate because our $R^{2}$  is fairly high. So, this contributes to how accurate our model is. Also, we can look at the stanard deviations of each of our explainatory variables. The standard deviation related to each of predictor variables are all fairly small For TV, radio, and newspaper, they are `r regression_summary_multiple$coefficients[2,2]`, `r regression_summary_multiple$coefficients[2,3]`, approximately`r round(regression_summary_multiple$coefficients[2,4], digits = 3)`. respectively. So, that means that our predictions of $\beta_1$, $\beta_2$, and $\beta_3$ are very close to the true model and thus we have an accurate fitted model so the predictions are fairly accurate.
+As explained in the previous question, we know that our prediction is fairly accurate because our $R^{2}$  is fairly high. So, this contributes to how accurate our model is. Also, we can look at the stanard deviations of each of our explainatory variables. The standard deviation related to each of predictor variables are all fairly small For TV, radio, and newspaper, they are `r regression_summary_multiple$coefficients[2,2]`, `r regression_summary_multiple$coefficients[2,3]`, approximately `r round(regression_summary_multiple$coefficients[2,4], digits = 3)`. respectively. So, that means that our predictions of $\beta_1$, $\beta_2$, and $\beta_3$ are very close to the true model and thus we have an accurate fitted model so the predictions are fairly accurate.
 
 ## Conclusion
 So, in this project, we were able to recreate the study that was done in chapter 3.2 of _An Introduction of Statistical Learning_ by Gareth James, Daniela Witten, Trevor Hastie and Robert Tibshirani. We also found that there is some relationship between TV, radio, and newspaper budget with sales. This is shown through the rejection of our null hypothesis. Our null hypothesis is $H_{0}$: $\beta_1 = \beta_2 = \cdots = \beta_p$. Additionally, we know that our model fits well because $R^{2}$ is close to 1 and RSE is small by comparative standards. 
