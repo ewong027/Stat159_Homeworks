@@ -72,8 +72,6 @@ Additionally, we have included the correlation matrix between the different vari
 Correlation Matrix:
 ```{r results= 'asis', echo = FALSE}
 load('../data/correlation-matrix.RData')
-correlation_matrix <- round(correlation_matrix, digits = 4)
-correlation_matrix[lower.tri(correlation_matrix)] <- ''
 cor_matrix <- xtable(correlation_matrix,
               caption = 'Correlation Matrix',
               digits = 4)
@@ -94,7 +92,7 @@ To answer these questions, we will be using the informations from the tables pro
 When asking this question, we are setting up the null hypothesis to be: $H_{0}$: $\beta_1 = \beta_2 = \cdots = \beta_p$. The alternative hypothesis in this case is $H_{1}$: There exists at least one $\beta_j$ that does not equal 0. In order to see if there is a relationship we can look at the F-statistic. If there is no relationship between the predictors and the response variable, in our case TV, radio, and newspaper with sales, then the F-statistic will be close to 1. However, if the F-statistic is greater than 1, then there is probably a relationship between the predictors and the response and we will reject the null hypothesis. Here is a chart containing additional information, and one of the things that is shown in this table is the F-statistic.
 
 ```{r results= 'asis', echo = FALSE}
-Quantity <- c('RSS', 'R2', 'F-stat')
+Quantity <- c('RSE', 'R2', 'F-stat')
 Value <- c(regression_summary_multiple$sigma,
            regression_summary_multiple$adj.r.squared,
            regression_summary_multiple$fstatistic[1])
