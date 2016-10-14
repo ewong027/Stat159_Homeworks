@@ -1,4 +1,4 @@
-.PHONY: all data info eda regression report clean
+.PHONY: all data tests info eda regression report clean
 
 # Establishing Variables
 Adv = data/Advertising.csv
