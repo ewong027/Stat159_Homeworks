@@ -15,8 +15,14 @@ Organization:
 * Makefile: This files contains the commands that will run my different R scripts. Additonally, through Makefile, I am going to produce everything that exists in the data folder and the report.
 * Report: This file contains my Report for this homework assignment in both .Rmd and .pdf form.
 
-Instructions on How to Reproduce:
+Instructions on How to Reproduce (Assuming you have already have all the scripts made and ready to use):
 
-1.
+1. I first started on this project by loading the advertising data set. To do this, I ran the command `make data`. This would download the dataset into my data folder. 
+2. Next, I worked with the r-script session-info-script.R. To run this script, I ran the command `make info`. This would then produce session-info.txt.
+3. Then I focused on the R-script eda-script.R. To generate the histograms, scatterplot matrix, and eda-output.txt, I ran the command `make eda`.
+4. After that, I worked with the r-script regression-script.R. To generate the scatterplots, residual plot, scale location plot, and normal qq plot, I ran the command `make regression`.
+5. In this project, we also had to create tests to be tested under testthat functions. To run the test-that tests, I ran the command `make tests`.
+6. Finally, in order to generate the report. I ran the command `make report`. This will run the report.Rmd and produce a report.pdf.
+    * Within the report itself, to generate the tables, I used the package xtable().
 
-Licenses: All media in this work is licensed under a [Creative Commons Attribution 4.0 International License](https://creativecommons.org/licenses/by/4.0/).
+Licenses: All media in this work is licensed under a [Creative Commons Attribution 4.0 International License](https://creativecommons.org/licenses/by/4.0/). All code is licensed under BSD-2-Clause, more information can be found in the License file.
