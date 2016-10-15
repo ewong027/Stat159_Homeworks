@@ -31,6 +31,6 @@ regression: $(Adv) $(cod)/regression-script.R
 report: report/report.Rmd $(regdata) $(cordata) $(fun)
 	Rscript -e "library(rmarkdown); render('report/report.Rmd','pdf_document')"
 
-
+# Phony Target for deleting the generated PDF report
 clean:
-	rm -f report/report.Rmd
+	rm -f report/report.pdf
