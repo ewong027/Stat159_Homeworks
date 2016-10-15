@@ -5,7 +5,6 @@ Adv = data/Advertising.csv
 regdata = data/regression.RData
 cordata = data/correlation-matrix.RData
 fun = code/Functions/regression-functions.R
-rmd = report/report.Rmd
 cod = code/Scripts
 
 all: eda regression report
@@ -22,14 +21,14 @@ tests:
 info: 
 	RScript $(cod)/session-info-script.R
 
-eda: 
+eda: $(Adv) $(cod)/eda-script.R
 	RScript $(cod)/eda-script.R
 
-regression: 
+regression: $(Adv) $(cod)/regression-script.R
 	RScript $(cod)/regression-script.R
 
 # Target for the report
-report: $(rmd) $(regdata) $(cordata) $(fun)
+report: report/report.Rmd $(regdata) $(cordata) $(fun)
 	Rscript -e "library(rmarkdown); render('report/report.Rmd','pdf_document')"
 
 
